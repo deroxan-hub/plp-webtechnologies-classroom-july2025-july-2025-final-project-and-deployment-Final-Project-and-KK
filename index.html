@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ivan Simiyu - Radio Production Consultant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .project-image {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background-color: #f8fafc;
+      padding: 8px;
+      border-radius: 0.5rem;
+    }
+    .project-card:hover .project-image {
+      transform: scale(1.02);
+      transition: transform 0.3s ease;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      background-color: #f8fafc;
+    }
+    .video-container iframe,
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background-color: rgba(99, 102, 241, 0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .play-button:hover {
+      background-color: rgba(99, 102, 241, 1);
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    .play-button i {
+      color: white;
+      font-size: 20px;
+      margin-left: 4px;
+    }
+
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 justify-between items-center">
+        <!-- Logo / Name -->
+        <a href="index.html" class="text-xl font-bold tracking-tight text-indigo-600">
+          Ivan Simiyu
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex space-x-6 text-slate-700 font-medium">
+          <a href="#portfolio" class="hover:text-indigo-600">Portfolio</a>
+          <a href="#skills" class="hover:text-indigo-600">Skills</a>
+          <a href="about.html" class="hover:text-indigo-600">About</a>
+          <a href="contact.html" class="hover:text-indigo-600">Contact</a>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button id="menu-btn" class="md:hidden text-slate-700 focus:outline-none">
+          ☰
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden flex-col mt-2 space-y-2 bg-white rounded-lg shadow p-4">
+        <a href="#portfolio" class="block hover:text-indigo-600">Portfolio</a>
+        <a href="#skills" class="block hover:text-indigo-600">Skills</a>
+        <a href="about.html" class="block hover:text-indigo-600">About</a>
+        <a href="contact.html" class="block hover:text-indigo-600">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <!-- Text -->
+    <div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">
+        Radio Production Consultancy
+      </h1>
+      <p class="text-base sm:text-lg leading-relaxed text-slate-600 mb-6">
+        Hi, I'm Ivan Simiyu, a dedicated radio production consultant 
+        helping stations, podcasters, and media brands craft engaging audio experiences. 
+        From show design to audio branding and strategy, I bring creativity and expertise 
+        to every project.
+      </p>
+      <a href="#portfolio" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-xl shadow hover:bg-indigo-700 transition">
+        Explore My Work
+      </a>
+    </div>
+
+    <!-- Profile Photo -->
+    <div class="flex justify-center">
+      <img src="IMG_2414.PNG" alt="Ivan Simiyu - Radio Consultant"
+           class="rounded-2xl shadow-lg object-cover w-64 h-64">
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h2 class="text-2xl font-bold text-slate-900 mb-8">Portfolio</h2>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Example Project Card -->
+      <div class="rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition p-4 bg-white">
+        <div class="flex items-center justify-center bg-slate-100 rounded-lg p-2">
+          <img src="IMG_0495.jpg" class="project-image" />
+        </div>
+        <h3 class="mt-4 font-semibold text-lg">Podcast Strategy</h3>
+        <p class="text-slate-600 text-sm mt-2">
+          Studio Operations,Technical Management and Sound branding..
+        </p>
+      </div>
+
+      <div class="rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition p-4 bg-white">
+        <div class="flex items-center justify-center bg-slate-100 rounded-lg p-2">
+          <img src="IMG_0246.PNG" alt="Studio Training" class="project-image" />
+        </div>
+        <h3 class="mt-4 font-semibold text-lg">Studio Training</h3>
+        <p class="text-slate-600 text-sm mt-2">
+          Multimedia Design, Social Media Management & Live Broadcasting.
+        </p>
+      </div>
+
+       <!-- Video Project Card -->
+      <div class="rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition p-4 bg-white">
+        <div class="video-container" id="videoContainer">
+          
+          <iframe src="Snapchat-80505430.mp4" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+          </iframe>
+        </div>
+        <h3 class="mt-4 font-semibold text-lg">Live Broadcast Sample</h3>
+        <p class="text-slate-600 text-sm mt-2">
+          A sample of my live radio broadcasting work..
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h2 class="text-2xl font-bold text-slate-900 mb-8">Top Skills</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      
+      <!-- Original Skills -->
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Radio Show Design
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Audio Editing
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Sound Branding
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Voice Coaching
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Media Strategy
+      </div>
+
+      <!-- New Skills -->
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Audio Production & Editing
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Video Production & Post-Production
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Multimedia Design & Social Media Management
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Studio Operations & Technical Management
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Camera Operation
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Research Skills
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Script Writing
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Content Development
+      </div>
+      <div class="rounded-lg bg-white shadow p-4 text-center hover:shadow-md transition">
+        Music Scheduling & Curation
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-16 border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+    © <span id="year"></span> Ivan Simiyu. All rights reserved.
+  </footer>
+
+  <!-- Script for Year + Mobile Menu -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

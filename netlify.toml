@@ -1,0 +1,3 @@
+[build]
+  command = ""        # no build step, since this is a static HTML site
+  publish = "."       # serve files from the root folder
